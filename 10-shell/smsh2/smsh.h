@@ -1,0 +1,27 @@
+#ifndef smsh
+#define smsh
+
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+
+#define bool int
+#define true 1
+#define false 0
+
+char *next_cmd(char *, FILE *);
+char *newstr(char *, int);
+char **splitline(char *);
+void freelist(char **);
+void *emalloc(size_t);
+void *erealloc(void *, size_t);
+int execute(char **);
+bool ok_to_execute();
+bool is_control_command(char *);
+int do_control_command(char **);
+int syn_err(char *);
+int process(char **);
+void fatal(char *, char *, int);
+
+#endif
